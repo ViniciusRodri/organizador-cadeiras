@@ -2,12 +2,13 @@
   "name": "organizador-cadeiras",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
+   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && touch out/.nojekyll && npx gh-pages -d out"
+    "predeploy": "rm -rf .next out",
+    "deploy": "npm run build && touch out/.nojekyll && npx gh-pages -d out -t true"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^18.0.1",
